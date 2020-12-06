@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+html, body{
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.container{
+    display: inline-flex;
+    list-style: none;
+}
+.container li{
+    position: relative;
+    height: 70px;
+    width: 70px;
+    border: 2px solid #ff4747;
+    margin: 0 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+}
+.container li:hover{
+    background: #ff4747;
+    transition: background 0.001s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.3s;
+}
+
+.container li:before,.container li:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    border: 0px solid transparent;
+}
+.container li:hover:before{
+    border-width: 70px;
+    border-top-color: #ff4747;
+    transition: border-top-width 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53), border-top-color 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.container li:hover:after{
+    border-width: 70px;
+    border-left-color: #ff4747;
+    transition: border-left-width 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53), border-left-color 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.container li a{
+    line-height: 70px;
+    font-size: 30px;
+    color: #ff4747;
+    z-index: 1;
+    position: relative;
+    transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.container li:hover a{
+    color: #fff;
+}
